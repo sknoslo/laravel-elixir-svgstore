@@ -6,14 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sknoslo@github.com/sknoslo/laravel-elixir-svgstore.git"
+  },
   "keywords": [
     "laravel",
     "elixir",
     "svg",
-    "icon",
-    "sprite"
+    "svgstore"
   ],
-  "author": "Steffen Olson <sknoslo@gmail.com>",
+  "author": "sknoslo",
   "license": "ISC",
   "dependencies": {
     "gulp-svgmin": "^1.2.0",
