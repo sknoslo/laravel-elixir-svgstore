@@ -1,0 +1,23 @@
+{
+  "name": "laravel-elixir-svgstore",
+  "version": "0.0.1",
+  "description": "Laravel Elixir extension for gulp-svgstore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "laravel",
+    "elixir",
+    "svg",
+    "icon",
+    "sprite"
+  ],
+  "author": "Steffen Olson <sknoslo@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-svgmin": "^1.2.0",
+    "gulp-svgstore": "^5.0.5",
+    "gulp-rename": "^1.2.2"
+  }
+}
