@@ -37,9 +37,12 @@ elixir(function(mix) {
 
 ## In Your Blade Templates
 
+If you started with a file called ```myicon.svg``` you can display that icon like this:
+
+
 ```html
 <svg style="width: .75em; height: .75em">
-  <use xlink:href="svg/sprites.svg"/>
+  <use xlink:href="svg/sprites.svg#myicon"/>
 </svg>
 ```
 
