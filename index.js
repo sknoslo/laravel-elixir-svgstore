@@ -7,13 +7,13 @@ var Elixir = require('laravel-elixir');
 
 var config = Elixir.config;
 
-Elixir.extend('svgstore', function(baseDir, output) {
+Elixir.extend('svgstore', function(baseDir, output, filename) {
   config.svg = {
     folder: 'svg',
     outputFolder: 'svg'
   };
 
-  var paths = prepGulpPaths('**/*.svg', baseDir, output);
+  var paths = prepGulpPaths('**/*.svg', baseDir, output, filename);
 
   new Elixir.Task('svgstore', function () {
     this.log(paths.src, paths.output);
@@ -53,10 +53,11 @@ Elixir.extend('svgstore', function(baseDir, output) {
  * @param  {string|array} src
  * @param  {string|null} baseDir
  * @param  {string|null}  output
+ * @param  {string|null}  filename
  * @return {object}
  */
-var prepGulpPaths = function(src, baseDir, output) {
+var prepGulpPaths = function(src, baseDir, output, filename) {
   return new Elixir.GulpPaths()
     .src(src, baseDir || config.get('assets.svg.folder'))
-    .output(output || config.get('public.svg.outputFolder'), 'sprites.svg');
+    .output(output || config.get('public.svg.outputFolder'), filename || 'sprites.svg');
 };
