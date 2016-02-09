@@ -25,13 +25,13 @@ elixir(function(mix) {
 By default, it will look for .svg files within ```resources/assets/svg/``` and outputs
 ```sprites.svg``` to ```public/svg/```.
 
-You can optionally pass a source directory and an output directory:
+You can optionally pass a source directory, an output directory, and a custom filename:
 
 ```js
 ...
 
 elixir(function(mix) {
-  mix.svgstore('resources/assets/icons', 'public/icons');
+  mix.svgstore('resources/assets/icons', 'public/sprites/', 'icons.svg');
 });
 ```
 
