@@ -25,20 +25,30 @@ elixir(function(mix) {
 By default, it will look for .svg files within ```resources/assets/svg/``` and outputs
 ```sprites.svg``` to ```public/svg/```.
 
-You can optionally pass a source directory, an output directory, and a custom filename:
+You can optionally pass the following:
+
+- source directory
+- output directory
+- custom filename
+- custom [svgmin plugins](https://github.com/ben-eb/gulp-svgmin#plugins)
 
 ```js
 ...
 
+var svgminPlugins = [
+  { removeUnknownsAndDefaults: false },
+  { removeUselessStrokeAndFill: false },
+  { collapseGroups: false }
+];
+
 elixir(function(mix) {
-  mix.svgstore('resources/assets/icons', 'public/sprites/', 'icons.svg');
+  mix.svgstore('resources/assets/icons', 'public/sprites/', 'icons.svg', svgminPlugins);
 });
 ```
 
 ## In Your Blade Templates
 
 If you started with a file called ```myicon.svg``` you can display that icon like this:
-
 
 ```html
 <svg style="width: .75em; height: .75em">
