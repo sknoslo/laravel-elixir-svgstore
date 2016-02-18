@@ -7,7 +7,7 @@ var Elixir = require('laravel-elixir');
 
 var config = Elixir.config;
 
-Elixir.extend('svgstore', function(baseDir, output, filename) {
+Elixir.extend('svgstore', function(baseDir, output, filename, plugins) {
   config.svg = {
     folder: 'svg',
     outputFolder: 'svg'
@@ -24,13 +24,13 @@ Elixir.extend('svgstore', function(baseDir, output, filename) {
         var prefix = path.basename(file.relative, path.extname(file.relative));
 
         return {
-          plugins: [{
+          plugins: plugins || [{
             cleanupIDs: {
               prefix: prefix + '-',
               minify: true
             }
           }]
-        }
+        };
       }))
       .pipe(svgstore())
       .on('error', function (e) {
