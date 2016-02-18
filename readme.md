@@ -22,15 +22,26 @@ elixir(function(mix) {
 
 ## Usage
 
-By default, it will look for .svg files within ```resources/assets/svg/``` and outputs
-```sprites.svg``` to ```public/svg/```.
+By default, it will look for .svg files within ```resources/assets/svg/``` and output
+```sprites.svg``` to ```public/svg/```, using the following [svgmin plugins](https://github.com/ben-eb/gulp-svgmin#plugins):
 
-You can optionally pass the following:
+```
+...
+
+plugins: [{
+  cleanupIDs: {
+    prefix: prefix + '-',
+    minify: true
+  }
+}]
+```
+
+You can optionally pass custom arguments for:
 
 - source directory
 - output directory
-- custom filename
-- custom [svgmin plugins](https://github.com/ben-eb/gulp-svgmin#plugins)
+- filename
+- [svgmin plugins](https://github.com/ben-eb/gulp-svgmin#plugins)
 
 ```js
 ...
