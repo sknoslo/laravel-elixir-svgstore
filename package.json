@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-svgstore",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Laravel Elixir extension for gulp-svgstore",
   "main": "index.js",
   "scripts": {
